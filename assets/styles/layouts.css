@@ -1,0 +1,38 @@
+* {
+    font-family: source-sans-3, Helvetica, Arial, sans-serif;
+    font-size: var(--l);
+    font-weight: var(--fw-medium);
+    text-decoration: none;
+    list-style: none;
+}
+
+nav ul li a{
+    font-weight: var(--fw-bold);
+}
+
+/*TODO:
+    - adjust appearence of li in footer >>
+    - Default value im Input field ergänzen*/
+h2 {
+    font-size: var(--xxl);
+    font-weight: var(--fw-bold);
+}
+
+main section:first-of-type h2 {
+    font-size: var(--xxxl);
+}
+
+
+.associated-name, .tag-list li {
+    font-size: var(--m);
+}
+
+
+figcaption > p, footer  h2 {
+    font-size: var(--xl);
+    font-weight: var(--fw-bold);
+}
+
+
+
+

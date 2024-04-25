@@ -27,8 +27,11 @@
   --xxxl: 40px;
 
   /*colors*/
-  --color-light: #e8e8e8;
   --color-lightest: #fff;
+  --color-header-light: #e8e8e8;
+  --color-welcome-orange: #e9590c;
+  --color-main-grey: #e8e8e8;
+  --color-footer-grey: #6c6c6c;
 }
 
 

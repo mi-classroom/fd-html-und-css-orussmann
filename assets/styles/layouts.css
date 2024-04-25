@@ -6,13 +6,21 @@
     list-style: none;
 }
 
+body, header nav ul li:last-of-type, input[type="search"], .tag-list li, .main nav ul li:first-child {
+    background-color: var(--color-main-grey);
+}
+
+header, header ul, main nav  {
+    background-color: var(--color-lightest);
+}
+
 nav ul li a{
     font-weight: var(--fw-bold);
 }
 
 /*TODO:
-    - adjust appearence of li in footer >>
-    - Default value im Input field ergänzen*/
+- adjust appearence of li in footer >>
+- Default value im Input field ergänzen*/
 h2 {
     font-size: var(--xxl);
     font-weight: var(--fw-bold);
@@ -20,19 +28,29 @@ h2 {
 
 main section:first-of-type h2 {
     font-size: var(--xxxl);
+    background-color: var(--color-welcome-orange);
+    color: var(--color-lightest);
 }
 
+input[type="search"] + button, main section:nth-child(2) {
+    background-color: var(--color-welcome-orange);
+    color: var(--color-lightest)
+}
 
 .associated-name, .tag-list li {
-    font-size: var(--m);
+    font-size: var(--m)
 }
-
 
 figcaption > p, footer  h2 {
     font-size: var(--xl);
     font-weight: var(--fw-bold);
 }
 
+footer {
+    background-color: var(--color-footer-grey);
+    color: var(--color-main-grey);
+}
 
-
-
+li:not(footer section ul li) {
+    background-color: var(--color-lightest);
+}

@@ -4,6 +4,7 @@
     font-weight: var(--fw-medium);
     text-decoration: none;
     list-style: none;
+    margin: 0;
 }
 
 body, header nav ul li:last-of-type, input[type="search"], .tag-list li, .main nav ul li:first-child {
@@ -53,4 +54,30 @@ footer {
 
 li:not(footer section ul li) {
     background-color: var(--color-lightest);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0 15px 0;
+}
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--xxl);
+}
+
+main nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+main nav ul li {
+    padding: var(--xxxs) var(--xxxl);
 }

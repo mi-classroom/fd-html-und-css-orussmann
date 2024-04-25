@@ -1,4 +1,5 @@
 * {
+    border: dotted blue 1px;
     font-family: source-sans-3, Helvetica, Arial, sans-serif;
     font-size: var(--l);
     font-weight: var(--fw-medium);
@@ -7,21 +8,39 @@
     margin: 0;
 }
 
-body, header nav ul li:last-of-type, input[type="search"], .tag-list li, .main nav ul li:first-child {
+
+.ul-item:last-of-type {
+    border-radius: 100%;
+    padding: var(--xxxs);
+}
+
+body,
+.header-nav .ul-item:last-of-type,
+.search-form .search-input,
+.tag-list li,
+.main nav ul li:first-child {
     background-color: var(--color-main-grey);
 }
 
-header, header ul, main nav  {
+.header,
+.header-nav,
+main nav {
     background-color: var(--color-lightest);
 }
 
-nav ul li a{
+.header-nav .anchor {
     font-weight: var(--fw-bold);
 }
 
+
+.mobile, .material-symbols-outlined.mobile {
+    display: none;
+}
+
 /*TODO:
-- adjust appearence of li in footer >>
-- Default value im Input field ergänzen*/
+    -   Adjust appearence of li in footer >>
+    -   Add value in input field
+    -   Move selectors to base or components */
 h2 {
     font-size: var(--xxl);
     font-weight: var(--fw-bold);
@@ -33,16 +52,19 @@ main section:first-of-type h2 {
     color: var(--color-lightest);
 }
 
-input[type="search"] + button, main section:nth-child(2) {
+.search-button,
+main section:nth-child(2) {
     background-color: var(--color-welcome-orange);
     color: var(--color-lightest)
 }
 
-.associated-name, .tag-list li {
+.associated-name,
+.tag-list li {
     font-size: var(--m)
 }
 
-figcaption > p, footer  h2 {
+figcaption>p,
+footer h2 {
     font-size: var(--xl);
     font-weight: var(--fw-bold);
 }
@@ -56,15 +78,20 @@ li:not(footer section ul li) {
     background-color: var(--color-lightest);
 }
 
-header {
+
+
+
+/*Flex*/
+
+.header {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 15px 0 15px 0;
+    padding: var(--l) var(--l) var(--l) var(--l);
 }
 
-header nav ul {
+.header .u-list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -75,9 +102,50 @@ header nav ul {
 main nav ul {
     display: flex;
     flex-direction: row;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
 }
+
 main nav ul li {
     padding: var(--xxxs) var(--xxxl);
+}
+
+
+
+@media (max-width: 1000px) {
+
+    .desktop,
+    .header-nav {
+        display: none;
+    }
+
+    .mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 100vw;
+        padding: 0 var(--l);
+    }
+
+    .search-input {
+        flex-grow: 1;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: var(--xxl)
+    }
+
+    .material-symbols-outlined.mobile {
+        display: inline;
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 700,
+            'GRAD' 0,
+            'opsz' 48;
+            position: absolute;
+            
+    }
+
+
 }

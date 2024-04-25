@@ -11,33 +11,46 @@
   <link rel="stylesheet" href="./assets/styles/icons.css">
   <link rel="stylesheet" href="./assets/styles/components.css">
   <link rel="stylesheet" href="./assets/styles/layouts.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
   <header class="header">
-    <h1>
+    <h1 class="heading-1">
       <a href=""><img src="./assets/images/p4all.svg" alt="ProjectSurvival4All TH-Köln Banner Logo"></a>
     </h1>
-    <form>
-      <input type="search">
-      <button><img src="./assets/images/magnifying-glass.png" alt=""></button>
+    <form class="search-form desktop">
+      <input class="search-input" type="search">
+      <button class="search-button"><span class="icon icon--l">search</span></button>
     </form>
-    <nav>
-      <ul>
-        <li>
-          <a href="">News</a>
+    <nav class="header-nav">
+      <ul class="u-list">
+        <li class="ul-item">
+          <a class="anchor" href="#news">News</a>
         </li>
-        <li>
-          <a href="">Barrierefreiheit</a>
+        <li class="ul-item">
+          <a class="anchor" href="#accessability">Barrierefreiheit</a>
         </li>
-        <li>
-          <a href="">DE</a>
+        <li class="ul-item">
+          <a class="anchor" href="#language">DE</a>
         </li>
-        <li>
-          <a href="">MK</a>
+        <li class="ul-item">
+          <a class="anchor" href="#mk">MK</a>
         </li>
       </ul>
     </nav>
+
+    <span class="material-symbols-outlined mobile">
+      menu
+      </span>
+      
+      <form class="search-form mobile">
+        <input class="search-input" type="search">
+        <button class="search-button"><span class="icon icon--l">search</span></button>
+      </form>
+
+    
+    
   </header>
   <main class="main">
     <nav>
@@ -222,7 +235,7 @@
           <a href="">
             <figure>
               <img src="./assets/images/business-idea.jpg"
-              alt="8 Menschen, die an einem Tisch sitzen, von oben gesehen und zwei Menschen schütteln sich die Hände.">
+                alt="8 Menschen, die an einem Tisch sitzen, von oben gesehen und zwei Menschen schütteln sich die Hände.">
               <figcaption>
                 <p>Wie arbeite ich im Team?<br><span class="associated-name">Monika Engelen</span></p>
               </figcaption>
@@ -295,4 +308,3 @@
   </footer>
 
 </body>
-

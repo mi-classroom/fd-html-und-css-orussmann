@@ -55,6 +55,12 @@ body,
     -   Add value in input field    
     -   Move selectors to base or components
     -   Move Search input below main nav
+    -   Linting hinzufügen
+    -   Smaller font size
+    -   Less pading
+    -   The mobile device display style should be adjusted to an actual mobile device screen size
+        (not random 100px, like the current solution)
+    -   Not the content should be shrinking with a shrinking scren size, but the padding on the sides
     */
 
 h2 {
@@ -174,4 +180,38 @@ li:not(footer section ul li) {
     }
 
 
+}
+
+
+.desk-section .u-list {
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--m);
+}
+
+
+
+/*Grid*/
+
+.favs-section .u-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(100px + 33%), 1fr));
+    gap: var(--l);
+}
+
+
+.ul-anchor {
+    display: block;
+    padding: var(--m);
+}
+
+
+
+.history-section .u-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr ));
+    gap: var(--l);
 }

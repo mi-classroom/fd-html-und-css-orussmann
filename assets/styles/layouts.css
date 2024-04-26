@@ -6,10 +6,11 @@
     text-decoration: none;
     list-style: none;
     margin: 0;
+    padding-left: 0;
 }
 
 
-.ul-item:last-of-type {
+.header .ul-item:last-of-type {
     border-radius: 100%;
     padding: var(--xxxs);
 }
@@ -18,52 +19,67 @@ body,
 .header-nav .ul-item:last-of-type,
 .search-form .search-input,
 .tag-list li,
-.main nav ul li:first-child {
+.main-nav .ul-item:first-child {
     background-color: var(--color-main-grey);
 }
 
-.header,
-.header-nav,
-main nav {
-    background-color: var(--color-lightest);
+.main:not(.main-nav .u-list), .footer {
+    margin: 0 10vw;
+}
+
+
+.main-nav {
+    background-color: var(--color-main-grey);
+
+    .u-list {
+        background-color: var(--color-lightest);
+        padding-bottom: 0;
+    }
 }
 
 .header-nav .anchor {
     font-weight: var(--fw-bold);
 }
 
+.header {
+    background-color: var(--color-lightest);
+}
 
-.mobile, .material-symbols-outlined.mobile {
+.mobile,
+.material-symbols-outlined.mobile {
     display: none;
 }
 
 /*TODO:
     -   Adjust appearence of li in footer >>
-    -   Add value in input field
-    -   Move selectors to base or components */
+    -   Add value in input field    
+    -   Move selectors to base or components
+    -   Move Search input below main nav
+    */
+
 h2 {
     font-size: var(--xxl);
     font-weight: var(--fw-bold);
 }
 
-main section:first-of-type h2 {
+.info-section h2 {
     font-size: var(--xxxl);
     background-color: var(--color-welcome-orange);
     color: var(--color-lightest);
 }
 
 .search-button,
-main section:nth-child(2) {
+.info-section {
     background-color: var(--color-welcome-orange);
     color: var(--color-lightest)
 }
 
 .associated-name,
-.tag-list li {
-    font-size: var(--m)
+.tag-list .ul-item {
+    font-size: var(--l)
 }
 
-figcaption>p,
+.figcaption-info,
 footer h2 {
     font-size: var(--xl);
     font-weight: var(--fw-bold);
@@ -99,17 +115,27 @@ li:not(footer section ul li) {
     gap: var(--xxl);
 }
 
-main nav ul {
+.main-nav .u-list {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    text-align: center;
+
 }
 
-main nav ul li {
+.main-nav .ul-item {
     padding: var(--xxxs) var(--xxxl);
 }
 
+
+.info-section,
+.favs-section,
+.desk-section,
+.history-section {
+    padding: var(--m);
+    margin-top: var(--xxl);
+}
 
 
 @media (max-width: 1000px) {
@@ -143,8 +169,8 @@ main nav ul li {
             'wght' 700,
             'GRAD' 0,
             'opsz' 48;
-            position: absolute;
-            
+        position: absolute;
+
     }
 
 

@@ -192,6 +192,21 @@ li:not(footer section ul li) {
     gap: var(--m);
 }
 
+.footer-flex-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: start;
+    gap: var(--xxl);
+    flex-wrap: wrap;
+}
+
+
+
+.footer {
+    padding: var(--m);
+}
+
 
 
 /*Grid*/

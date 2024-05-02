@@ -14,10 +14,8 @@ function transitionToMainMenu(e) {
 
 document.addEventListener('DOMContentLoaded', showTabScreen)
 
-
 const tabScreens = Array.from(document.querySelectorAll('[data-tab]'));
 const tabs = Array.from(document.querySelectorAll('.main-nav .ul-item'));
-
 
 const mainNavTabs = Array.from(document.querySelectorAll('.main-nav .ul-item'));
 mainNavTabs.forEach(tab => tab.addEventListener('click', showTabScreen));
@@ -42,9 +40,12 @@ function showTabScreen(event) {
         const clickedTab = event.currentTarget;
         const clickedTabClass = clickedTab.classList[1];
 
-        tabScreens.forEach(screen => screen.classList.remove('tab-active'));       
-
-        tabScreens.find(screen => screen.getAttribute('data-tab') == clickedTabClass).classList.add('tab-active')
+        tabScreens
+            .forEach(screen => screen.classList.remove('tab-active'));
+        tabScreens
+            .find(screen => screen.getAttribute('data-tab') == clickedTabClass)
+            .classList
+            .add('tab-active')
 
         mainNavTabs.forEach(tab => tab.classList.remove('tab-selected'));
         clickedTab.classList.add('tab-selected');

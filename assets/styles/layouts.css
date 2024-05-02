@@ -23,7 +23,8 @@ body,
     background-color: var(--color-main-grey);
 }
 
-.main:not(.main-nav .u-list), .footer {
+.main:not(.main-nav .u-list),
+.footer {
     margin: 0 10vw;
 }
 
@@ -46,7 +47,8 @@ body,
 }
 
 .mobile,
-.material-symbols-outlined.mobile {
+.material-symbols-outlined.hamburger.mobile,
+.material-symbols-outlined.close-icon.mobile {
     display: none;
 }
 
@@ -61,6 +63,8 @@ body,
     -   The mobile device display style should be adjusted to an actual mobile device screen size
         (not random 100px, like the current solution)
     -   Not the content should be shrinking with a shrinking scren size, but the padding on the sides
+    -   Static vs variable fonts?
+    -   Main menu should retract when changing to bigger screen size 
     */
 
 h2 {
@@ -168,7 +172,25 @@ li:not(footer section ul li) {
         gap: var(--xxl)
     }
 
-    .material-symbols-outlined.mobile {
+    .material-symbols-outlined.hamburger.mobile {
+        padding: 0;
+        display: none;
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 700,
+            'GRAD' 0,
+            'opsz' 48;
+        position: absolute;
+        top: var(--m);
+        right: 10vw;
+        text-align: end;
+        &.is-visible {
+            display: inline;
+        }
+    }
+
+    .material-symbols-outlined.close-icon.mobile {
+        padding: 0;
         display: inline;
         font-variation-settings:
             'FILL' 0,
@@ -176,17 +198,20 @@ li:not(footer section ul li) {
             'GRAD' 0,
             'opsz' 48;
         position: absolute;
-
+        top: var(--m);
+        right: 10vw;
+        text-align: end;
+        &.is-visible {
+            display: none;
+        }
     }
-
-
 }
 
 
 .desk-section .u-list {
     display: flex;
     flex-direction: row;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     gap: var(--m);
@@ -227,6 +252,28 @@ li:not(footer section ul li) {
 
 .history-section .u-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr ));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--l);
+}
+
+/*Mobile main menu*/
+
+.main-menu {
+    display: flex;
+    gap: var(--l);
+    flex-direction: column;
+    position: fixed;
+    padding: var(--xl);
+    background-color: var(--color-main-grey);
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: transform var(--td-short);
+
+    &.is-active {
+        transform: translateX(0);
+    }
 }

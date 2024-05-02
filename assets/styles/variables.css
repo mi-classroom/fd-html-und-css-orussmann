@@ -32,6 +32,11 @@
   --color-welcome-orange: #e9590c;
   --color-main-grey: #e8e8e8;
   --color-footer-grey: #6c6c6c;
+
+  /*times*/
+  --td-short: 500ms;
+  --td-middle: 1000ms;
+  --td-fast: 1500ms;
 }
 
 

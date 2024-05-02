@@ -12,3 +12,28 @@ function transitionToMainMenu(e) {
     closeIcon.classList.toggle('is-visible');
 }
 
+document.addEventListener('DOMContentLoaded', showTabScreen)
+
+const tabScreens = Array.from(document.querySelectorAll('[data-tab]'));
+const tabs = Array.from(document.querySelectorAll('.main-nav .ul-item'));
+console.log(tabs)
+
+function showTabScreen() {
+    let dataValue;
+
+    tabScreens.forEach(element => {
+        console.log(element)
+        dataValue = element.getAttribute('data-tab');
+        console.log(dataValue)
+        if (dataValue != 'my-area') {
+            element.classList.toggle('tab-active');
+        }
+    })
+
+    tabs.find(element => element.classList.contains('my-area')).setAttribute('style', 'background-color: #e8e8e8')
+}
+
+
+
+
+

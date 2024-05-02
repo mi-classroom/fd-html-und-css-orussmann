@@ -18,8 +18,7 @@
 body,
 .header-nav .ul-item:last-of-type,
 .search-form .search-input,
-.tag-list li,
-.main-nav .ul-item:first-child {
+.tag-list li {
     background-color: var(--color-main-grey);
 }
 
@@ -114,7 +113,7 @@ li:not(footer section ul li) {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: var(--l) var(--l) var(--l) var(--l);
+    padding: var(--l) var(--l) 0 var(--l);
 }
 
 .header .u-list {
@@ -131,7 +130,7 @@ li:not(footer section ul li) {
     justify-content: center;
     align-items: stretch;
     text-align: center;
-
+    
 }
 
 .main-nav .ul-item {
@@ -276,4 +275,22 @@ li:not(footer section ul li) {
     &.is-active {
         transform: translateX(0);
     }
+}
+
+
+/*Mobile tabs*/
+
+.tab-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  > * {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    display: none;
+
+    &.tab-active {
+      display: block;
+    }
+  }
 }

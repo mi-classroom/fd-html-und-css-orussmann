@@ -14,26 +14,42 @@ function transitionToMainMenu(e) {
 
 document.addEventListener('DOMContentLoaded', showTabScreen)
 
+
 const tabScreens = Array.from(document.querySelectorAll('[data-tab]'));
 const tabs = Array.from(document.querySelectorAll('.main-nav .ul-item'));
-console.log(tabs)
 
-function showTabScreen() {
+
+const mainNavTabs = Array.from(document.querySelectorAll('.main-nav .ul-item'));
+mainNavTabs.forEach(tab => tab.addEventListener('click', showTabScreen));
+
+function showTabScreen(event) {
     let dataValue;
 
-    tabScreens.forEach(element => {
-        console.log(element)
-        dataValue = element.getAttribute('data-tab');
-        console.log(dataValue)
-        if (dataValue != 'my-area') {
-            element.classList.toggle('tab-active');
-        }
-    })
+    if (event.type == 'DOMContentLoaded') {
 
-    tabs.find(element => element.classList.contains('my-area')).setAttribute('style', 'background-color: #e8e8e8')
+        tabScreens.forEach(element => {
+            dataValue = element.getAttribute('data-tab');
+            if (dataValue != 'my-area') {
+                element.classList.toggle('tab-active');
+            }
+        })
+        tabs
+            .find(element => element.classList.contains('my-area'))
+            .classList
+            .add('tab-selected');
+    } else {
+
+        const clickedTab = event.currentTarget;
+        const clickedTabClass = clickedTab.classList[1];
+
+        tabScreens.forEach(screen => screen.classList.remove('tab-active'));       
+
+        tabScreens.find(screen => screen.getAttribute('data-tab') == clickedTabClass).classList.add('tab-active')
+
+        mainNavTabs.forEach(tab => tab.classList.remove('tab-selected'));
+        clickedTab.classList.add('tab-selected');
+    }
 }
-
-
 
 
 

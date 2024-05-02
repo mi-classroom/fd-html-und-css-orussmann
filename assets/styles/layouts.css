@@ -138,6 +138,7 @@ li:not(footer section ul li) {
 }
 
 
+
 .info-section,
 .favs-section,
 .desk-section,
@@ -293,4 +294,8 @@ li:not(footer section ul li) {
       display: block;
     }
   }
+}
+
+.tab-selected {
+    background-color: var(--color-main-grey);
 }

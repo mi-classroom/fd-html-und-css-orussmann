@@ -1,0 +1,42 @@
+:root {
+  /*font families*/
+  --ff-icons: material-icons;
+  --ff-sans: source-sans-3;
+
+  /*font-weights*/
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /*line-heights*/
+  --lh-tight: 100%;
+  --lh-normal: 130%;
+  --lh-loose: 150%;
+
+  /*sizes*/
+  --base-font-size: calc(1rem * 0.08);
+  --xxxs: 5px;
+  --xxs: 8px;
+  --xs: 10px;
+  --s: 12px;
+  --m: 16px;
+  --l: 20px;
+  --xl: 24px;
+  --xxl: 32px;
+  --xxxl: 40px;
+
+  /*colors*/
+  --color-lightest: #fff;
+  --color-header-light: #e8e8e8;
+  --color-welcome-orange: #e9590c;
+  --color-main-grey: #e8e8e8;
+  --color-footer-grey: #6c6c6c;
+
+  /*times*/
+  --td-short: 500ms;
+  --td-middle: 1000ms;
+  --td-fast: 1500ms;
+}
+
+

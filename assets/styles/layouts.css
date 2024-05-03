@@ -1,0 +1,301 @@
+* {
+    border: dotted blue 1px;
+    font-family: source-sans-3, Helvetica, Arial, sans-serif;
+    font-size: var(--l);
+    font-weight: var(--fw-medium);
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+
+.header .ul-item:last-of-type {
+    border-radius: 100%;
+    padding: var(--xxxs);
+}
+
+body,
+.header-nav .ul-item:last-of-type,
+.search-form .search-input,
+.tag-list li {
+    background-color: var(--color-main-grey);
+}
+
+.main:not(.main-nav .u-list),
+.footer {
+    margin: 0 10vw;
+}
+
+
+.main-nav {
+    background-color: var(--color-main-grey);
+
+    .u-list {
+        background-color: var(--color-lightest);
+        padding-bottom: 0;
+    }
+}
+
+.header-nav .anchor {
+    font-weight: var(--fw-bold);
+}
+
+.header {
+    background-color: var(--color-lightest);
+}
+
+.mobile,
+.material-symbols-outlined.hamburger.mobile,
+.material-symbols-outlined.close-icon.mobile {
+    display: none;
+}
+
+/*TODO:
+    -   Adjust appearence of li in footer >>
+    -   Add value in input field    
+    -   Move selectors to base or components
+    -   Move Search input below main nav
+    -   Linting hinzufügen
+    -   Smaller font size
+    -   Less pading
+    -   The mobile device display style should be adjusted to an actual mobile device screen size
+        (not random 100px, like the current solution)
+    -   Not the content should be shrinking with a shrinking scren size, but the padding on the sides
+    -   Static vs variable fonts?
+    -   Main menu should retract when changing to bigger screen size 
+    */
+
+h2 {
+    font-size: var(--xxl);
+    font-weight: var(--fw-bold);
+}
+
+.info-section h2 {
+    font-size: var(--xxxl);
+    background-color: var(--color-welcome-orange);
+    color: var(--color-lightest);
+}
+
+.search-button,
+.info-section {
+    background-color: var(--color-welcome-orange);
+    color: var(--color-lightest)
+}
+
+.associated-name,
+.tag-list .ul-item {
+    font-size: var(--l)
+}
+
+.figcaption-info,
+footer h2 {
+    font-size: var(--xl);
+    font-weight: var(--fw-bold);
+}
+
+footer {
+    background-color: var(--color-footer-grey);
+    color: var(--color-main-grey);
+}
+
+li:not(footer section ul li) {
+    background-color: var(--color-lightest);
+}
+
+
+
+
+/*Flex*/
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--l) var(--l) 0 var(--l);
+}
+
+.header .u-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--xxl);
+}
+
+.main-nav .u-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+    
+}
+
+.main-nav .ul-item {
+    padding: var(--xxxs) var(--xxxl);
+}
+
+
+
+.info-section,
+.favs-section,
+.desk-section,
+.history-section {
+    padding: var(--m);
+    margin-top: var(--xxl);
+}
+
+
+@media (max-width: 1000px) {
+
+    .desktop,
+    .header-nav {
+        display: none;
+    }
+
+    .mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 100vw;
+        padding: 0 var(--l);
+    }
+
+    .search-input {
+        flex-grow: 1;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: var(--xxl)
+    }
+
+    .material-symbols-outlined.hamburger.mobile {
+        padding: 0;
+        display: none;
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 700,
+            'GRAD' 0,
+            'opsz' 48;
+        position: absolute;
+        top: var(--m);
+        right: 10vw;
+        text-align: end;
+        &.is-visible {
+            display: inline;
+        }
+    }
+
+    .material-symbols-outlined.close-icon.mobile {
+        padding: 0;
+        display: inline;
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 700,
+            'GRAD' 0,
+            'opsz' 48;
+        position: absolute;
+        top: var(--m);
+        right: 10vw;
+        text-align: end;
+        &.is-visible {
+            display: none;
+        }
+    }
+}
+
+
+.desk-section .u-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--m);
+}
+
+.footer-flex-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: start;
+    gap: var(--xxl);
+    flex-wrap: wrap;
+}
+
+
+
+.footer {
+    padding: var(--m);
+}
+
+
+
+/*Grid*/
+
+.favs-section .u-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(100px + 33%), 1fr));
+    gap: var(--l);
+}
+
+
+.ul-anchor {
+    display: block;
+    padding: var(--m);
+}
+
+
+
+.history-section .u-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--l);
+}
+
+/*Mobile main menu*/
+
+.main-menu {
+    display: flex;
+    gap: var(--l);
+    flex-direction: column;
+    position: fixed;
+    padding: var(--xl);
+    background-color: var(--color-main-grey);
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: transform var(--td-short);
+
+    &.is-active {
+        transform: translateX(0);
+    }
+}
+
+
+/*Mobile tabs*/
+
+.tab-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  > * {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    display: none;
+
+    &.tab-active {
+      display: block;
+    }
+  }
+}
+
+.tab-selected {
+    background-color: var(--color-main-grey);
+}
